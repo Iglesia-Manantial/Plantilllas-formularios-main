@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type='text/css' media='screen' href="css/styles.css">
+    <link rel="icon" type="imagen.ico" href="assets/img/icon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="assets/js/sweet/package/dist/sweetalert2.all.js"></script>
+    <link href="css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <style>
+            .d-none {
+            display: none !important;
+        }
+        
+        select {
+            background: #e5e5e5;
+            border: #e5e5e5;
+            height: 50px;
+            line-height: 50px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 0 22px;
+            font-size: 16px;
+            width: 90%;
+            @media screen and (max-width: 1681px) and (max-height: 1051px) and (min-width: 1680px) and (min-height: 1050px) {
+                select {
+                    background: #e5e5e5;
+                    border: #e5e5e5;
+                    height: 50px;
+                    line-height: 50px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    width: 110%;
+                }
+                textarea {
+                    background: #e5e5e5;
+                    line-height: 30px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    color: black;
+                    width: 275px;
+                    height: 213px;
+                }
+            }
+            @media screen and (max-width: 1441px) and (max-height:901px) and (min-width: 1440px) and (min-height:900px) {
+                select {
+                    background: #e5e5e5;
+                    border: #e5e5e5;
+                    height: 50px;
+                    line-height: 50px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    width: 150%;
+                }
+                textarea {
+                    background: #e5e5e5;
+                    line-height: 30px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    color: black;
+                    width: 275px;
+                    height: 213px;
+                }
+            }
+            @media screen and (max-width: 1601px) and (max-height:901px) and (min-width: 1600px) and (min-height:900px) {
+                select {
+                    background: #e5e5e5;
+                    border: #e5e5e5;
+                    height: 50px;
+                    line-height: 50px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                }
+                textarea {
+                    background: #e5e5e5;
+                    line-height: 30px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    color: black;
+                    width: 275px;
+                    height: 213px;
+                }
+                #TypeDoc {
+                    width: 126p%;
+                }
+            }
+            @media screen and (max-width: 1367px) and (max-height:769px) and (min-width:1279pxpx) and (min-height:719px) {
+                select {
+                    background: #e5e5e5;
+                    border: #e5e5e5;
+                    height: 50px;
+                    line-height: 50px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    width: 126%;
+                }
+                .name {
+                    margin-bottom: 3%
+                }
+                textarea {
+                    background: #e5e5e5;
+                    line-height: 30px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    padding: 0 22px;
+                    font-size: 16px;
+                    color: black;
+                    width: 275px;
+                    height: 213px;
+                }
+                #TypeDoc {
+                    width: 126p%;
+                }
+            }
+    </style>
+    <title>Conéctate</title>
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-body">
+                    <form action="{{ url('/conectados') }}" id="registro-persona" method="POST">
+                        <strong>
+                            <center>
+                                <h1 style="color:#383232;font-weight: bold; padding-bottom:3%;">Formulario Conéctate </h1>
+                            </center>
+                        </strong>
+                        <br>
+                        <div class="alert alert-warning d-none" style="background-color: rgba(252,255,38, 0.5); text-align: center !important;" id="mensajeEscribir" role="alert">
+                            El usuario se encuentra actualmente registrado, si desea ingresar una petición, escríbalo en la siguiente caja:
+                        </div>
+                        <br>
+                        <div id="cajasPrincipales">
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">Tipo de documento
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="TypeDoc" style="width: 120% !important" id="TypeDoc" w required>
+                                                <option selected value="3">Cédula de ciudadanía</option>
+                                                <option value="4">Cédula de extranjería</option>
+                                                <option value="18">Documento de identificación extranjero</option>
+                                                <option value="17">NIT de empresa</option>
+                                                <option value="6">Pasaporte</option>
+                                                <option value="1">Registro civil</option>
+                                                <option value="2">Tarjeta de identidad</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style=" color:#383232; position: relative;">Número de documento
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" style="width: 120% !important" placeholder="Ej: 10000000" required type="text" name="documento" id="documento">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ocultar">
+
+                            
+
+                            <div class="form-row m-b-55" style="display: flexbox; align-items: center;">
+                                <div class="name" style="color:#383232;">Nombres
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" style="width: 120% !important" placeholder="Primer nombre" required type="text" id="Name1" name="Name1">
+                                    </div>
+                                    <br>
+                                    <div class="input-group" style=" margin-top: -3% !important ">
+                                        <input class="input--style-5" style="width: 120% !important" placeholder="Segundo nombre" type="text" name="Name2" id="Name2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55" style="display: flexbox; align-items: center;">
+                                <div class="name" style="color:#383232;">Apellidos
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input style="width: 120% !important" class="input--style-5" placeholder="Primer apellido" required type="text" name="LastName1" id="LastName1">
+                                    </div><br>
+                                    <div class="input-group" style="margin-top: -3% !important">
+                                        <input style="width: 120% !important" class="input--style-5" placeholder="Segundo apellido" type="text" name="LastName2" id="LastName2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="display: flexbox; align-items: center;">
+                                <div class="name" style="color:#383232;">Fecha de nacimiento
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input  class="input--style-5" style="width: 120% !important" type="date" id="fecha_N" name="fecha_N">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">Número de contacto
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" style="width: 120% !important" placeholder="Ej: 3213231231" required type="number" name="ContactNumber" id="ContactNumber">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">Correo electrónico</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" style="width: 120% !important" placeholder="Ej: andres@correo.com" type="email" id="Email" name="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">Lugar de recepción
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="Reception" id="Reception" style="width: 120% !important">
+                                                <option selected disabled value="">Seleccione</option>
+                                                <option value="Auditorio principal">Auditorio Principal</option>
+                                                <option value="Sede Usme">Sede Usme</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">País
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select style="width: 120% !important" name="Country" id="Country">
+                                                <option selected value="45">Colombia</option>
+                                                @foreach ($prueba as $pa)
+                                                <option value="{{ $pa->id }}">{{ $pa->nombre }}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name" style="color:#383232;">Ciudad
+                                    <font color="red">*</font>
+                                </div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" style="width: 120% !important" id="City" name="City" placeholder="Ej: Bogotá" required type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name" style="color:#383232;">Dirección de residencia
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select id="Nomenclature" name="Nomenclature" style="width: 120% !important" required>
+                                                <option value="Autopista">Autopista </option>
+                                                <option value="Avenida">Avenida</option>
+                                                <option value="Avenida Calle">Avenida Calle</option>
+                                                <option value="Avenida Carrera">Avenida Carrera</option>
+                                                <option value="Avenida Diagonal">Avenida Diagonal</option>
+                                                <option value="Avenida Transversal">Avenida Transversal</option>
+                                                <option selected value="Calle">Calle</option>
+                                                <option value="Carrera">Carrera</option>
+                                                <option value="Carretera">Carretera</option>
+                                                <option value="Circunvalar">Circunvalar</option>
+                                                <option value="Corregimiento">Corregimiento</option>
+                                                <option value="Diagonal">Diagonal</option>
+                                                <option value="Kilómetro">Kilómetro</option>
+                                                <option value="Transversal">Transversal</option>
+                                                <option value="Variante">Variante</option>
+                                                <option value="Vereda">Vereda</option>
+                                                <option value="Vía">Vía</option>
+                                            </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">
+                                <p style="visibility: hidden;">Información 1</p>
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" style="width: 120% !important" name="Info1" id="Info1" placeholder="Ej: 90 bis" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">
+                                <p style="visibility: hidden;">Información 2</p>
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" style="width: 120% !important" placeholder="Ej: # 50 - 30" type="text" name="Info2" id="Info2" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">
+                                <p style="visibility: hidden;">Orientación</p>
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Orientation" id="Orientation" style="width: 120% !important">
+                                                <option selected disabled value="">Orientación</option>
+                                                <option value="Norte">Norte</option>
+                                                <option value="Sur">Sur</option>
+                                                <option value="Oriente">Este / Oriente</option>
+                                                <option value="Occidente">Oeste / Occidente</option>
+                                            </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name" style="color:#383232;">Barrio
+                                <font color="red">*</font>
+                            </div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" style="width: 120% !important" required placeholder="Ej: Lisboa" type="text" id="Info3" name="Info3">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="name" style="color:#383232;">Petición</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="textarea--style-5" style="width: 120% !important ;" id="Asking" name="Asking" placeholder="Ingresa tu petición" type="text"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row p-t-20" id="respons">
+                            <label class="label label--block"><input class="checkbox" type="checkbox" required> Acepto
+                                las políticas de privacidad</label>
+                        </div>
+                        <p style="text-align: justify !important;color:#383232;"><small>Al diligenciar este
+                                formulario
+                                autorizo para
+                                que mis datos personales sean utilizados para fines estipulados
+                                dentro de la política de privacidad y protección de datos
+                                personales de la Iglesia Manantial de Vida Eterna, las cuales se
+                                encuentran en la página Web www.soymanantial.com. Acepto recibir
+                                llamadas telefónicas, mensajes de textos, emails y
+                                notificaciones para informarme acerca de todas las actividades
+                                de la Iglesia, las cuales están fundamentadas en mi crecimiento
+                                espiritual y fortalecimiento de valores morales y cristianos. Lo
+                                anterior dando estricto cumplimiento a la Ley 1581 de 2012 (Ley
+                                de Habeas Data).</small></p>
+                        <br><br>
+                        <center>
+                            <button style="margin-top: 3%;" class="btn btn--radius-2 btn--green" type="submit">Guardar</button>
+                            <button style="margin-top: 3%;" class="btn btn--radius-2 btn--red" onclick="location.reload()" type="button">Cancelar</button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <strong>
+    <center style=" margin-top: -5%">En caso de presentar algún problema comunícate al correo: soporte.tecnologia@manantial.co </center>
+    </strong>
+    
+    </div>
+    
+    <?php
+    
+    
+    
+    
+      if(isset($numero)){
+        if($numero == "98"){
+        $numero = "00";
+          echo $mensaje;
+          
+          }
+        }
+        
+          if(isset($numero)){
+        if($numero == "89"){
+          $numero = "00";
+          echo $respuesta;
+          }
+        }
+        
+        header("Cache-Control: no-cache, must-revalidate"); 
+        header("Expires: Sat, 1 Jul 2000 05:00:00 GMT");
+    ?>
+    
+   
+
+    <script src="assets/js/ajax2.js"></script>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+
+
+</body>
+
+</html>
